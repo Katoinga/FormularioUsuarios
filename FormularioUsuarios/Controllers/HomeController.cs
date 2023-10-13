@@ -54,8 +54,6 @@ namespace FormularioUsuarios.Controllers
                 if (oUsuarioVM.Id == 0)
                 {
                     Usuario nuevo = new Usuario();
-                    int ultimoId = _DBContext.Usuarios.OrderByDescending(u => u.Id).Select(u => u.Id).FirstOrDefault();
-                    nuevo.Id = ultimoId + 1;
                     nuevo.Nombres = oUsuarioVM.Nombres;
                     nuevo.Apellidos = oUsuarioVM.Apellidos;
                     nuevo.FechaNacimiento = oUsuarioVM.FechaNacimiento;

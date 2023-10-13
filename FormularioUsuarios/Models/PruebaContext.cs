@@ -21,18 +21,17 @@ public partial class PruebaContext : DbContext
     {
 
     }
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Usuario>(entity =>
         {
+            entity.HasKey(e => e.Id).HasName("PK__USUARIOS__3213E83F9970D2CE");
+
             entity.ToTable("USUARIOS");
 
-            entity.HasIndex(e => e.NroDocumento, "UQ__USUARIOS__761A4C4685330480").IsUnique();
+            entity.HasIndex(e => e.NroDocumento, "UQ__USUARIOS__761A4C46103A7820").IsUnique();
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Apellidos)
                 .HasMaxLength(50)
                 .IsUnicode(false)
