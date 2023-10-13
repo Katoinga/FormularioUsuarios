@@ -40,8 +40,8 @@
                             <td>@item.Provincia</td>
                             <td>@item.Direccion</td>
                             <td>
-                                <a class="btn btn-primary btn-sm " asp-action="Usuario_Detalle" asp-controller="Home" asp-route-idUsuario="@item.Id"> Editar</a>
-                                <a class="btn btn-danger btn-sm " asp-action="Eliminar" asp-controller="Home" asp-route-idUsuario="@item.Id"> Eliminar</a>
+                            <a class="btn btn-primary btn-sm " asp-action="DetalleUsuario" asp-controller="Home" asp-route-idUsuario="@item.Id"> Editar</a>
+                            <a class="btn btn-danger btn-sm " asp-action="EliminarUsuario" asp-controller="Home" asp-route-idUsuario="@item.Id"> Eliminar</a>
                             </td>
                         </tr>
 

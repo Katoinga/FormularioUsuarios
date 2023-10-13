@@ -17,6 +17,7 @@ else
     <div class="col-sm-4">
         <form asp-action="GuardarUsuario" asp-controller="Home" method="post">
             <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="Estado" />
             <div class="form-group mb-2">
                 <label asp-for="Nombres">Nombres*</label>
                 <input asp-for="Nombres" class="form-control" type="text" />
@@ -31,7 +32,7 @@ else
 
             <div class="form-group mb-2">
                 <label asp-for="FechaNacimiento">Fecha de nacimiento</label>
-                <input asp-for="FechaNacimiento" class="form-control" type="date" />
+                <input asp-for="FechaNacimiento" class="form-control" type="date"/>
                 <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
             </div>
 

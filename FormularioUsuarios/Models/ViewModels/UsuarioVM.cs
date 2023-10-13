@@ -1,9 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using FormularioUsuarios.Models;
 
 namespace FormularioUsuarios.Models.ViewModels
 {
     public class UsuarioVM
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "El campo Nombres es obligatorio")]
@@ -16,11 +20,13 @@ namespace FormularioUsuarios.Models.ViewModels
 
         [Required(ErrorMessage = "El campo Fecha de Nacimiento es obligatorio")]
         [Display(Name = "Fecha de Nacimiento")]
+        [FechaNacimientoValida]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime FechaNacimiento { get; set; }
 
         [Required(ErrorMessage = "El campo Numero de Documento es obligatorio")]
+        [RegularExpression(@"^\d{8}$", ErrorMessage = "El campo Numero de Documento debe ser de 8 digitos")]
         public int NroDocumento { get; set; }
 
         [Required(ErrorMessage = "El campo Departamento es obligatorio")]
